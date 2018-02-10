@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.david.contacts.MainActivity">
+
+
+    <Button
+        android:id="@+id/button_CreateNew"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/createNew"
+        app:layout_constraintBottom_toTopOf="@+id/button_EditContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_EditContact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/editContact"
+        app:layout_constraintBottom_toTopOf="@+id/button_DeleteContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_CreateNew" />
+
+    <Button
+        android:id="@+id/button_DeleteContact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/deleteContact"
+        app:layout_constraintBottom_toTopOf="@+id/button_DisplayContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_EditContact" />
+
+    <Button
+        android:id="@+id/button_DisplayContact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/displayContact"
+        app:layout_constraintBottom_toTopOf="@+id/button_Finish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_DeleteContact" />
+
+    <Button
+        android:id="@+id/button_Finish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_DisplayContact" />
+
+
+</android.support.constraint.ConstraintLayout>
