@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         if (getIntent() != null && getIntent().getExtras() != null) {
             contact = (Contact) getIntent().getExtras().getSerializable(CreateNewContact.CONTACT_KEY);
             contactList.add(contact);
+
+            Log.d("test", "Array: " + contactList.toString());
 
         }
 

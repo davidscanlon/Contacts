@@ -3,6 +3,7 @@ package com.example.david.contacts;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,8 @@ public class CreateNewContact extends AppCompatActivity {
     EditText lastName;
     EditText company;
     EditText phone, email, url, address, birthday, nickname, facebook, twitter, skype, youtube;
+    ImageButton picture;
+
 
     private static final int CAMERA_REQUEST = 1888;
 
@@ -43,7 +46,7 @@ public class CreateNewContact extends AppCompatActivity {
         twitter = findViewById(R.id.editText_Twitter);
         skype = findViewById(R.id.editText_Skype);
         youtube = findViewById(R.id.editText_Youtube);
-
+        picture = findViewById(R.id.imageButton_AddPhoto);
 
         photoButton = findViewById(R.id.imageButton_AddPhoto);
         photoButton.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +86,7 @@ public class CreateNewContact extends AppCompatActivity {
                     contact.setSkype(skype.getText().toString());
                     contact.setYoutube(youtube.getText().toString());
 
+
                     Intent intent = new Intent(CreateNewContact.this, MainActivity.class);
                     intent.putExtra(CONTACT_KEY, contact);
                     startActivity(intent);
@@ -99,6 +103,7 @@ public class CreateNewContact extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             photoButton.setImageBitmap(photo);
+
         }
     }
 }

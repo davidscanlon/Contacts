@@ -1,13 +1,11 @@
 package com.example.david.contacts;
 
+import android.graphics.Bitmap;
 import android.media.Image;
 import android.widget.ImageView;
 
 import java.io.Serializable;
 
-/**
- * Created by David on 2/10/18.
- */
 
 public class Contact implements Serializable {
 
@@ -46,9 +44,27 @@ public class Contact implements Serializable {
         this.twitter = twitter;
         this.skype = skype;
         this.youtube = youtube;
+
     }
 
-
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "first='" + first + '\'' +
+                ", last='" + last + '\'' +
+                ", company='" + company + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", url='" + url + '\'' +
+                ", address='" + address + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", facebook='" + facebook + '\'' +
+                ", twitter='" + twitter + '\'' +
+                ", skype='" + skype + '\'' +
+                ", youtube='" + youtube + '\'' +
+                '}';
+    }
 
     public String getFirst() {
         return first;
