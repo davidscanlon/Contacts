@@ -1,11 +1,14 @@
 package com.example.david.contacts;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class CreateNewContact extends AppCompatActivity {
@@ -13,11 +16,13 @@ public class CreateNewContact extends AppCompatActivity {
     static String CONTACT_KEY = "contact";
 
     Button saveButton;
+    ImageButton photoButton;
     EditText firstName;
     EditText lastName;
     EditText company;
     EditText phone, email, url, address, birthday, nickname, facebook, twitter, skype, youtube;
 
+    private static final int CAMERA_REQUEST = 1888;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,17 @@ public class CreateNewContact extends AppCompatActivity {
         twitter = findViewById(R.id.editText_Twitter);
         skype = findViewById(R.id.editText_Skype);
         youtube = findViewById(R.id.editText_Youtube);
+
+
+        photoButton = findViewById(R.id.imageButton_AddPhoto);
+        photoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
+            }
+        });
+
 
 
         //****************
@@ -77,5 +93,12 @@ public class CreateNewContact extends AppCompatActivity {
         });
         //****************
 
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            photoButton.setImageBitmap(photo);
+        }
     }
 }

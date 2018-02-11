@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         if (getIntent() != null && getIntent().getExtras() != null) {
             contact = (Contact) getIntent().getExtras().getSerializable(CreateNewContact.CONTACT_KEY);
             contactList.add(contact);
+
         }
 
 
