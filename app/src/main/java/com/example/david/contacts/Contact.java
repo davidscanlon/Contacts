@@ -3,11 +3,13 @@ package com.example.david.contacts;
 import android.media.Image;
 import android.widget.ImageView;
 
+import java.io.Serializable;
+
 /**
  * Created by David on 2/10/18.
  */
 
-public class Contact {
+public class Contact implements Serializable {
 
     //variables
     String first;
@@ -23,21 +25,30 @@ public class Contact {
     String twitter;
     String skype;
     String youtube;
-    int pictureID;
 
-    //Constructor
-    public Contact() {
-        pictureID = R.drawable.add_photo;
+
+    // Default Constructor
+    public Contact() {}
+
+
+
+    public Contact(String first, String last, String company, String phoneNumber, String email, String url, String address, String birthday, String nickname, String facebook, String twitter, String skype, String youtube) {
+        this.first = first;
+        this.last = last;
+        this.company = company;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.url = url;
+        this.address = address;
+        this.birthday = birthday;
+        this.nickname = nickname;
+        this.facebook = facebook;
+        this.twitter = twitter;
+        this.skype = skype;
+        this.youtube = youtube;
     }
 
 
-    public int getPictureID() {
-        return pictureID;
-    }
-
-    public void setPictureID(int pictureID) {
-        this.pictureID = pictureID;
-    }
 
     public String getFirst() {
         return first;

@@ -7,11 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    static String CONTACT_KEY;
 
     Button createNewButton;
 
     Button finishButton;
+
+    Contact contact;
+
+    //List for keeping track of Contacts
+    ArrayList<Contact> contactList = new ArrayList<Contact>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
                 System.exit(0);
             }
         });
@@ -42,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //****************************************************
+
+        if (getIntent() != null && getIntent().getExtras() != null) {
+            contact = (Contact) getIntent().getExtras().getSerializable(CreateNewContact.CONTACT_KEY);
+            contactList.add(contact);
+        }
 
 
 
