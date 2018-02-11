@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.david.contacts.ContactsList">
 
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.david.contacts.ContactFragment"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        tools:layout="@layout/contact_fragment"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="16dp" />
 </android.support.constraint.ConstraintLayout>
